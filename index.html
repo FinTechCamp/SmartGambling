@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Smart Gambling</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body class="grey">
+    <div class="container white">
+        <div class="card-panel black center-align" style=" padding: 1px;">
+          <img  src="images/LogoTrimmed.png" alt="Logo" >
+        </div>
+
+        <div class="row">
+            <div class="col s10 offset-s1">
+              <div class="card-panel grey lighten-3 center-align hoverable">
+                <span id="Messages">Win some ETH!<br/>Choose a number between 1 and 3 and place your bet.</span>
+              </div>
+            </div>
+          </div>
+
+        <div class="row">
+          <form class="col s6 offset-s3">
+              <form >
+                <h5>Make your prediction</h5>
+                <p class="center">
+                  <label>
+                    <input class="with-gap" name="prediction" type="radio" value="1" checked />
+                    <span>1</span>
+                  </label>
+                  <label>
+                    <input class="with-gap" name="prediction" type="radio" value="2"  />
+                    <span>2</span>
+                  </label>
+                  <label>
+                    <input class="with-gap" name="prediction" type="radio" value="3" />
+                    <span>3</span>
+                  </label>
+                  <div class="input-field">
+                    <input placeholder="Bet Amount in Wei" id="amount_input" type="number" class="validate">
+                    <label for="bet_amount_label">amount</label>
+                  </div>
+                  <button type="button" id="bet_button" class="waves-effect waves-light blue btn">Place Bet</button>
+                  <br/><br/>
+                  <div class="input-field">
+                    <input type="number"  id="withdraw_amount_input" placeholder="0" readonly>
+                    <label for="withdraw_label">unclaimed wins</label>
+                  </div>
+                  <button type="button" id="withdraw_button" class="waves-effect waves-light blue btn">Withdraw Wins</button>
+                  <br/><br/>
+                  <div id="AccountBalanceText">Account Balance: </div>
+                  <div id="UnclaimedWinsText">Unclaimed Wins: 0 ETH</div>
+                  
+                  <br/>
+                </p>
+              </form>
+          </form>
+        </div>
+
+          <footer class="page-footer black lighten-2 ">
+            <div class="footer-copyright">
+              <div class="container">
+                <label id="ContractBalanceText" class="grey-text text-lighten-4 left">Contract ETH Balance: </label>
+                <label id="ContractLinkBalanceText" class="grey-text text-lighten-4 right">ChainLink Balance: 0 LINK</label>
+                <br/>
+                <a id="contract_link" style="font-size: 13px;" href="https://rinkeby.etherscan.io/address/">View Contract on Etherscan</a>
+              </div>
+            </div>
+          </footer>
+    </div>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js/web3.min.js"></script>
+    <script type="text/javascript" src="./js/abi.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+  </body>
+</html>
