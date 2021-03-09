@@ -6,10 +6,14 @@ Project #3: This decentralized application (Dapp) allows a user to bet on a rand
 
 ![Logo](images/SmartGamblingGUI.jpg)  
 
-### Link to play with the Dapp on the [Rinkeby](https://www.rinkeby.io/) testnet.
-[Play the Smart Gambling Dapp](https://fintechcamp.github.io/SmartGambling/)
+![Logo](images/ganache.png) ![Logo](images/ChainLinkLogo.jpg) ![Logo](images/MetaMaskLogo.jpg)
+<br />
+<br />
+# Link to play with the Dapp on the [Rinkeby](https://www.rinkeby.io/) testnet.  
 
-### Authors:  
+[Play the Smart Gambling Dapp](https://fintechcamp.github.io/SmartGambling/). The contract has only been deployed on the [Rinkeby](https://www.rinkeby.io/) testnet.
+
+# Authors:  
 - Sebastien Vezina
 - Stephen Chen
 - Wazarat Hussain
