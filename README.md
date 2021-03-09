@@ -4,7 +4,7 @@
 
 Project #3: A Dapp that allows a user to bet on a random number and win/lose ETH.  
 
-### Link to play with the Dapp on the [Rinkeby]() testnet.
+### Link to play with the Dapp on the [Rinkeby](https://www.rinkeby.io/) testnet.
 [Play the Smart Gambling Dapp](https://fintechcamp.github.io/SmartGambling/)
 
 ### Authors:  
