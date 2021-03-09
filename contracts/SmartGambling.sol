@@ -41,8 +41,9 @@ contract SmartGabling is VRFConsumerBase {
     // Total of wei owed to players, unclaimed wins
     uint public unclaimedWinsTotal;
     
-    // Pending bets for which we have not received a result yet
-    uint public pendingBets;
+    // A pending bet is a bet for which we have not received the result from the Oracle yet.
+    // This variable stores the sum (in wei) of all pending bets
+    uint public pendingBetsTotal;
     
     modifier ownerOnly() {
         require(msg.sender == owner, "This function is restricted to the owner.");
@@ -101,8 +102,8 @@ contract SmartGabling is VRFConsumerBase {
         require(prediction > 0 && prediction <= MAX_CHOICE, "Prediction must be between 1 and MAX_CHOICE");
         require(bet_amount > 0, "Bet amount must be greater than 0.");
 
-        // current contract balance here already includes player's bet.
-        uint availableContractBalance = address(this).balance.sub(unclaimedWinsTotal).sub(pendingBets).sub(bet_amount.mul(MAX_CHOICE));
+        // Here current contract balance already includes player's bet.
+        uint availableContractBalance = address(this).balance.sub(unclaimedWinsTotal).sub(pendingBetsTotal).sub(bet_amount.mul(MAX_CHOICE));
         require(bet_amount <= availableContractBalance, "Bet Amount is > 'real' available contract balance."); 
 
         // Request random number from ChainLink Oracle
@@ -114,7 +115,7 @@ contract SmartGabling is VRFConsumerBase {
         Bet memory betDetails = Bet(msg.sender, frontEndTimestamp, msg.value, prediction);
         bytes32 requestId = requestRandomNumber(seed);
         bets[requestId] = betDetails;
-        pendingBets = pendingBets.add(bet_amount.mul(MAX_CHOICE));
+        pendingBetsTotal = pendingBetsTotal.add(bet_amount.mul(MAX_CHOICE));
         
         emit BetEvent(msg.sender, requestId, frontEndTimestamp, msg.value, prediction);
         lastRequestId = requestId;
@@ -146,7 +147,7 @@ contract SmartGabling is VRFConsumerBase {
         uint winAmount = bets[requestId].betAmount.mul(MAX_CHOICE);
         
         // This bet is no longer pending
-        pendingBets = pendingBets.sub(winAmount);
+        pendingBetsTotal = pendingBetsTotal.sub(winAmount);
         
         // User won: send back MAX_BET times the bet amount
         if(bets[requestId].prediction == result) {
@@ -183,7 +184,7 @@ contract SmartGabling is VRFConsumerBase {
 
     // Get Contract Balance in Wei minus the unclaimed wins and pending bets
     function getRealEthBalance() public view returns(uint) {
-        uint realBalance = address(this).balance.sub(unclaimedWinsTotal).sub(pendingBets);
+        uint realBalance = address(this).balance.sub(unclaimedWinsTotal).sub(pendingBetsTotal);
         return realBalance;
     }
     
