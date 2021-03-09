@@ -1,6 +1,6 @@
 # Smart Gambling: A simple Dapp that allows a user to bet on a random number and win/lose ETH.  
 
-Project #3: A Dapp that allows a user to bet on a random number and win/lose ETH. The frontend is programmed using HTML, JavaScript as well as the [Web3.js - Ethereum JavaScript API](https://web3js.readthedocs.io/). The randomness in the game is powered by the decentralized Oracle [ChainLink](https://chain.link/solutions/chainlink-vrf).  
+Project #3: This Dapp that allows a user to bet on a random number and win/lose ETH. The frontend is programmed using HTML, JavaScript as well as the [Web3.js - Ethereum JavaScript API](https://web3js.readthedocs.io/). The randomness in the game is powered by the decentralized Oracle [ChainLink](https://chain.link/solutions/chainlink-vrf).  
 
 [Chainlink VRF: On-chain Verifiable Randomness](https://blog.chain.link/verifiable-random-functions-vrf-random-number-generation-rng-feature/). 
 
