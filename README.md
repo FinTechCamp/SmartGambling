@@ -4,9 +4,11 @@ Project #3: This decentralized application (Dapp) allows a user to bet on a rand
 
 [Chainlink VRF: On-chain Verifiable Randomness](https://blog.chain.link/verifiable-random-functions-vrf-random-number-generation-rng-feature/). 
 
-![Logo](images/SmartGamblingGUI.jpg)  
+[![Logo](images/SmartGamblingGUI.jpg)](https://fintechcamp.github.io/SmartGambling/)
 
-![Logo](images/ganache.png) ![Logo](images/ChainLinkLogo.jpg) ![Logo](images/MetaMaskLogo.jpg)
+[![Logo](images/ganache.png)](https://www.trufflesuite.com/)
+[![Logo](images/ChainLinkLogo.jpg)](ttps://chain.link/solutions/chainlink-vrf)
+[![Logo](images/MetaMaskLogo.jpg)](https://metamask.io/)
 <br />
 <br />
 # Link to play with the Dapp on the [Rinkeby](https://www.rinkeby.io/) testnet.  
