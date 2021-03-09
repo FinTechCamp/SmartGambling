@@ -7,7 +7,7 @@ Project #3: This decentralized application (Dapp) allows a user to bet on a rand
 [![Logo](images/SmartGamblingGUI.jpg)](https://fintechcamp.github.io/SmartGambling/)
 
 [![Logo](images/ganache.png)](https://www.trufflesuite.com/)
-[![Logo](images/ChainLinkLogo.jpg)](ttps://chain.link/solutions/chainlink-vrf)
+[![Logo](images/ChainLinkLogo.jpg)](https://chain.link/solutions/chainlink-vrf)
 [![Logo](images/MetaMaskLogo.jpg)](https://metamask.io/)
 <br />
 <br />
