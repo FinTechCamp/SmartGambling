@@ -1,6 +1,6 @@
-![Logo](images/LogoTrimmed.png)  
+# Smart Gambling: A simple Dapp that allows a user to bet on a random number and win/lose ETH.  
 
-# Smart Gambling: A simple Dapp that allows a user to bet on a random number and win/lose ETH. 
+![Logo]('images/Smart Gambling GUI.png')  
 
 Project #3: A Dapp that allows a user to bet on a random number and win/lose ETH.  
 
