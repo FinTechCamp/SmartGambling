@@ -1,8 +1,8 @@
 # Smart Gambling: A simple Dapp that allows a user to bet on a random number and win/lose ETH.  
 
-![Logo]('images/Smart Gambling GUI.png')  
-
 Project #3: A Dapp that allows a user to bet on a random number and win/lose ETH.  
+
+![Logo](images/SmartGamblingGUI.jpg)  
 
 ### Link to play with the Dapp on the [Rinkeby](https://www.rinkeby.io/) testnet.
 [Play the Smart Gambling Dapp](https://fintechcamp.github.io/SmartGambling/)
