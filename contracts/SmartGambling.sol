@@ -14,11 +14,11 @@ import "https://raw.githubusercontent.com/smartcontractkit/chainlink/master/evm-
   * Testnet ETH  is available from https://faucet.rinkeby.io/
   */
 
-contract SmartGabling is VRFConsumerBase {
+contract SmartGambling is VRFConsumerBase {
     
     address public owner;
     bytes32 internal keyHash;
-    uint256 internal fee;
+    uint256 internal fee; // ChainLink Fee
     
     bytes32 public lastRequestId;
     uint public lastResult;
@@ -52,16 +52,16 @@ contract SmartGabling is VRFConsumerBase {
     
     /* ***************** EVENTS ***************** */
     event BetEvent (
-        address indexed player_address,
-        bytes32 indexed requestId,
+        address player_address,
+        bytes32 requestId,
         uint timestamp,
         uint amount,
         uint prediction
     );
 
     event BetResultEvent (
-        address indexed player_address,
-        bytes32 indexed requestId,
+        address player_address,
+        bytes32 requestId,
         uint timestamp,
         uint amount,
         uint prediction,
@@ -87,8 +87,8 @@ contract SmartGabling is VRFConsumerBase {
      */
     constructor() 
         VRFConsumerBase(
-            0xb3dCcb4Cf7a26f6cf6B120Cf5A73875B7BBc655B, // VRF Coordinator
-            0x01BE23585060835E02B77ef475b0Cc51aA1e0709  // LINK Token
+            0xb3dCcb4Cf7a26f6cf6B120Cf5A73875B7BBc655B, // VRF Coordinator Contract Address on Rinkeby
+            0x01BE23585060835E02B77ef475b0Cc51aA1e0709  // LINK Token Contract Address on Rinkeby
         ) public
     {
         owner = msg.sender;
@@ -96,7 +96,8 @@ contract SmartGabling is VRFConsumerBase {
         fee = 0.1 * 10 ** 18; // 0.1 LINK
     }
 
-    
+    // Used to place a bet. The timestamp is used to uniquely identify the bet when when a 
+    // user places multiple bets at the same time while older bets are still pending
     function placeBet(uint frontEndTimestamp, uint prediction) public payable {
         uint bet_amount = msg.value;
         require(prediction > 0 && prediction <= MAX_CHOICE, "Prediction must be between 1 and MAX_CHOICE");
@@ -129,7 +130,7 @@ contract SmartGabling is VRFConsumerBase {
     }
 
     
-    // Callback function called by ChainLink Oracle to send this contrcat the random result
+    // Callback function called by ChainLink Oracle to send this contract the random result
     function fulfillRandomness(bytes32 requestId, uint256 randomness) internal override {
         // Random number between 1 and MAX_CHOICE
         uint result = randomness.mod(MAX_CHOICE).add(1);

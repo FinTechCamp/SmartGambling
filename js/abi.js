@@ -8,13 +8,13 @@ var abi = [
 		"anonymous": false,
 		"inputs": [
 			{
-				"indexed": true,
+				"indexed": false,
 				"internalType": "address",
 				"name": "player_address",
 				"type": "address"
 			},
 			{
-				"indexed": true,
+				"indexed": false,
 				"internalType": "bytes32",
 				"name": "requestId",
 				"type": "bytes32"
@@ -45,13 +45,13 @@ var abi = [
 		"anonymous": false,
 		"inputs": [
 			{
-				"indexed": true,
+				"indexed": false,
 				"internalType": "address",
 				"name": "player_address",
 				"type": "address"
 			},
 			{
-				"indexed": true,
+				"indexed": false,
 				"internalType": "bytes32",
 				"name": "requestId",
 				"type": "bytes32"
@@ -249,7 +249,7 @@ var abi = [
 	},
 	{
 		"inputs": [],
-		"name": "pendingBets",
+		"name": "pendingBetsTotal",
 		"outputs": [
 			{
 				"internalType": "uint256",
