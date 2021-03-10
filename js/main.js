@@ -140,7 +140,7 @@ $(document).ready(function() {
               new Audio('sounds/win.mp3').play();
               printMessage(`You won ${betAmount*2} wei!<br/>`+
               `Your prediction was ${playerPrediction} and the result was ${result}<br/>`+
-              "You can now withdraw your wins.");
+              "You can now withdraw your wins + your initial bet.");
             }
             else { 
               new Audio('sounds/the-price-is-right-losing-horn.mp3').play();
