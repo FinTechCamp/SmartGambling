@@ -14,7 +14,7 @@ $(document).ready(function() {
     document.getElementById("contract_link").innerHTML = contractURL;
   });
 
-  function rereshBalances(){
+  function refreshBalances(){
     displayETHBalance(accountAddress, "AccountBalanceText", "Account Balance: ");
     displayETHBalance(contractAddress, "ContractBalanceText", "Contract Balance: ");
     getWithdrawableWins();
@@ -26,7 +26,7 @@ $(document).ready(function() {
     .then(function(accounts) {
       window.accountAddress = accounts[0];
       window.contractInstance = new web3.eth.Contract(window.abi, window.contractAddress, {from: accounts[0]});
-      rereshBalances();
+      refreshBalances();
     });
   }
   
@@ -67,7 +67,7 @@ $(document).ready(function() {
       contractInstance.events.winsWithdrawEvent({ filter: {user: web3.eth.accounts[0]}, fromBlock: "latest" })
       .on('data', (event) => {
         //let requestId = event.returnValues.requestId;
-        rereshBalances();
+        refreshBalances();
         printMessage("Your withdraw has been completed.");
       })
       .on('error', console.error);
@@ -123,7 +123,7 @@ $(document).ready(function() {
       contractInstance.events.BetEvent({ filter: {user: web3.eth.accounts[0]}, fromBlock: "latest" })
       .on('data', (event) => {
         //console.log("BetEvent:", event);
-        rereshBalances();
+        refreshBalances();
         printMessage("Your bet has been placed.<br/>Waiting for result ...");
       })
       .on('error', console.error);
@@ -135,7 +135,7 @@ $(document).ready(function() {
            timestamp == event.returnValues.timestamp) {
             console.log("BetResultEvent:", event);
             let result = event.returnValues.result;
-            rereshBalances();
+            refreshBalances();
             if (playerPrediction === result) {
               new Audio('sounds/win.mp3').play();
               printMessage(`You won ${betAmount*2} wei!<br/>`+
