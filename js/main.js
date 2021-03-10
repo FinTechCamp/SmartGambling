@@ -1,7 +1,7 @@
 var web3 = new Web3(Web3.givenProvider);
 var accountAddress;
 var contractInstance;
-var contractAddress = "0x76c259bbfd77687d6E49719172A7aCa9dFcF0787";  
+var contractAddress = "0x853fe18B43B7ea9990FB48385F81EDA8Fb1DDb24";  
 var contractURL = `https://rinkeby.etherscan.io/address/${contractAddress}`;
 
 $(document).ready(function() {
@@ -122,7 +122,7 @@ $(document).ready(function() {
       // Wait for BetEvent
       contractInstance.events.BetEvent({ filter: {user: web3.eth.accounts[0]}, fromBlock: "latest" })
       .on('data', (event) => {
-        //let requestId = event.returnValues.requestId;
+        //console.log("BetEvent:", event);
         rereshBalances();
         printMessage("Your bet has been placed.<br/>Waiting for result ...");
       })
@@ -131,17 +131,19 @@ $(document).ready(function() {
       // Wait for BetResultEvent
       contractInstance.events.BetResultEvent()
       .on('data', (event) => {
-        //printMessage(accountAddress.toLowerCase() + "<br/>" + event.returnValues.player_address.toLowerCase());
         if(accountAddress.toLowerCase() == event.returnValues.player_address.toLowerCase() && 
            timestamp == event.returnValues.timestamp) {
+            console.log("BetResultEvent:", event);
             let result = event.returnValues.result;
             rereshBalances();
             if (playerPrediction === result) {
-              printMessage(`You won ${betAmount} wei!<br/>`+
+              new Audio('sounds/win.mp3').play();
+              printMessage(`You won ${betAmount*2} wei!<br/>`+
               `Your prediction was ${playerPrediction} and the result was ${result}<br/>`+
               "You can now withdraw your wins.");
             }
-            else {
+            else { 
+              new Audio('sounds/the-price-is-right-losing-horn.mp3').play();
               printMessage(`You lost ${betAmount} wei!<br/>`+
               `Your prediction was ${playerPrediction} and the result was ${result}<br/>`);
             }
