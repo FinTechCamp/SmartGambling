@@ -15,12 +15,6 @@ var abi = [
 			},
 			{
 				"indexed": false,
-				"internalType": "bytes32",
-				"name": "requestId",
-				"type": "bytes32"
-			},
-			{
-				"indexed": false,
 				"internalType": "uint256",
 				"name": "timestamp",
 				"type": "uint256"
@@ -38,7 +32,7 @@ var abi = [
 				"type": "uint256"
 			}
 		],
-		"name": "BetEvent",
+		"name": "BetPlacedEvent",
 		"type": "event"
 	},
 	{
@@ -49,12 +43,6 @@ var abi = [
 				"internalType": "address",
 				"name": "player_address",
 				"type": "address"
-			},
-			{
-				"indexed": false,
-				"internalType": "bytes32",
-				"name": "requestId",
-				"type": "bytes32"
 			},
 			{
 				"indexed": false,
@@ -127,40 +115,6 @@ var abi = [
 		],
 		"name": "winsWithdrawEvent",
 		"type": "event"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bytes32",
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"name": "bets",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "playerAddress",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "timestamp",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "betAmount",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "prediction",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
 	},
 	{
 		"inputs": [],
@@ -294,25 +248,6 @@ var abi = [
 		"name": "rawFulfillRandomness",
 		"outputs": [],
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "unclaimedWins",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{

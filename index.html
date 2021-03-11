@@ -21,29 +21,60 @@
         </div>
 
         <div class="row">
-            <div class="col s10 offset-s1">
+            <div class="col s8 offset-s2">
               <div class="card-panel grey lighten-3 center-align hoverable">
-                <span id="Messages">Win some ETH!<br/>Choose a number between 1 and 3 and place your bet.</span>
-              </div>
+                <span id="Messages" style="color: red;">Win some ETH!<br/>Roll the dice and place your bet.</span>
             </div>
           </div>
+
+
+        <div class="col s10 offset-s1 center-align">
+          <div style="text-align: center; display: inline-block; margin: 10px;"> 
+              <p id="PredictionDiceText">Prediction</p> 
+              <img id="PredictionDice" src="images/dices/dice6.png" alt="Prediction Dice"> 
+          </div> 
+    
+          <div style="text-align: center; display: inline-block; margin: 10px;"> 
+              <p id="ResultDiceText">Result</p> 
+              <img id="ResultDice" src="images/dices/dice0.png" alt="Result Dice"> 
+          </div> 
+      </div>
+
 
         <div class="row">
           <form class="col s6 offset-s3">
               <form >
-                <h5>Make your prediction</h5>
+                <h6>Make your prediction</h6>
                 <p class="center">
                   <label>
-                    <input class="with-gap" name="prediction" type="radio" value="1" checked />
+                    <input class="with-gap" name="prediction" type="radio" value="1" 
+                      onclick="document.getElementById('PredictionDice').src = 'images/dices/dice1.png'" />
                     <span>1</span>
                   </label>
                   <label>
-                    <input class="with-gap" name="prediction" type="radio" value="2"  />
+                    <input class="with-gap" name="prediction" type="radio" value="2" 
+                    onclick="document.getElementById('PredictionDice').src = 'images/dices/dice2.png'"/>
                     <span>2</span>
                   </label>
                   <label>
-                    <input class="with-gap" name="prediction" type="radio" value="3" />
+                    <input class="with-gap" name="prediction" type="radio" value="3" 
+                    onclick="document.getElementById('PredictionDice').src = 'images/dices/dice3.png'"/>
                     <span>3</span>
+                  </label>
+                  <label>
+                    <input class="with-gap" name="prediction" type="radio" value="4" 
+                    onclick="document.getElementById('PredictionDice').src = 'images/dices/dice4.png'"/>
+                    <span>4</span>
+                  </label>
+                  <label>
+                    <input class="with-gap" name="prediction" type="radio" value="5" 
+                    onclick="document.getElementById('PredictionDice').src = 'images/dices/dice5.png'"/>
+                    <span>5</span>
+                  </label>
+                  <label>
+                    <input class="with-gap" name="prediction" type="radio" value="6" checked
+                    onclick="document.getElementById('PredictionDice').src = 'images/dices/dice6.png'"/>
+                    <span>6</span>
                   </label>
                   <div class="input-field">
                     <input placeholder="Bet Amount in Wei" id="bet_amount_input" type="number" class="validate">
@@ -72,7 +103,10 @@
                 <label id="ContractBalanceText" class="grey-text text-lighten-4 left">Contract ETH Balance: 0 ETH</label>
                 <label id="ContractLinkBalanceText" class="grey-text text-lighten-4 right">ChainLink Balance: 0 LINK</label>
                 <br/>
-                <a id="contract_link" style="font-size: 13px;" href="https://rinkeby.etherscan.io/">View Contract on Blockchain Explorer</a>
+                <label style="color:white; font-size: 13px;">Rinkeby Testnet ETH Faucet: </label>
+                <a style="font-size: 13px;" href="https://faucet.rinkeby.io/">faucet.rinkeby.io</a><br/>
+                <label style="color:white; font-size: 13px;">Contract on Blockchain Explorer: </label>
+                <a id="contract_link" style="font-size: 13px;" href="https://rinkeby.etherscan.io/">https://rinkeby.etherscan.io/</a>
               </div>
             </div>
           </footer>

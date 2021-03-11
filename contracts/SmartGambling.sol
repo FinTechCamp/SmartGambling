@@ -20,10 +20,11 @@ contract SmartGambling is VRFConsumerBase {
     bytes32 internal keyHash;
     uint256 internal fee; // ChainLink Fee
     
+    // MAKE THESE PRIVATE AFTER DEBUGGING COMPLETED
     bytes32 public lastRequestId;
     uint public lastResult;
     
-    uint constant MAX_CHOICE = 3;
+    uint constant internal MAX_CHOICE = 6;
 
     struct Bet {
         address playerAddress;
@@ -33,10 +34,10 @@ contract SmartGambling is VRFConsumerBase {
     }
 
     // Mapping: requestId => Bet Details
-    mapping(bytes32 => Bet) public bets;
+    mapping(bytes32 => Bet) internal bets;
     
     // Wins to be withdrawn by winners
-    mapping(address => uint) public unclaimedWins;
+    mapping(address => uint) internal unclaimedWins;
 
     // Total of wei owed to players, unclaimed wins
     uint public unclaimedWinsTotal;
@@ -51,9 +52,8 @@ contract SmartGambling is VRFConsumerBase {
     }
     
     /* ***************** EVENTS ***************** */
-    event BetEvent (
+    event BetPlacedEvent (
         address player_address,
-        bytes32 requestId,
         uint timestamp,
         uint amount,
         uint prediction
@@ -118,7 +118,7 @@ contract SmartGambling is VRFConsumerBase {
         bets[requestId] = betDetails;
         pendingBetsTotal = pendingBetsTotal.add(bet_amount.mul(MAX_CHOICE));
         
-        emit BetEvent(msg.sender, requestId, frontEndTimestamp, msg.value, prediction);
+        emit BetPlacedEvent(msg.sender, frontEndTimestamp, msg.value, prediction);
         lastRequestId = requestId;
         lastResult = 0;
     }
@@ -132,6 +132,10 @@ contract SmartGambling is VRFConsumerBase {
     
     // Callback function called by ChainLink Oracle to send this contract the random result
     function fulfillRandomness(bytes32 requestId, uint256 randomness) internal override {
+        // Only the Oracle Coordinator Contract is allowed to call this function.
+        // Prevent someone else from calling it to emulate the Oracle with wining results
+        require(msg.sender == 0xb3dCcb4Cf7a26f6cf6B120Cf5A73875B7BBc655B);
+
         // Random number between 1 and MAX_CHOICE
         uint result = randomness.mod(MAX_CHOICE).add(1);
         lastResult = result;
