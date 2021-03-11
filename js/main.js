@@ -15,9 +15,14 @@ $(document).ready(function() {
   showResultDice(0);
 });
 
-// 0 = No result, 1-6 shows corresponding dice
-function showResultDice(result) {
-  document.getElementById('ResultDice').src = `images/dices/dice${result}.png`;
+// 0 = No result yet [?], 1-6 shows corresponding dice, -1 = animated dice
+function showResultDice(dice) {
+  if(dice >= 0) {
+    document.getElementById('ResultDice').src = `images/dices/dice${dice}.png`;
+  }
+  else {
+    document.getElementById('ResultDice').src = 'images/dices/animated-dice.gif';
+  }
 }
 
 function refreshBalances(){
@@ -131,6 +136,7 @@ function placeBet(){
     .on('data', (event) => {
       //console.log("BetEvent:", event);
       refreshBalances();
+      showResultDice(-1);
       printMessage("Your bet has been placed.<br/>Waiting for result ...");
     })
     .on('error', console.error);
