@@ -3,28 +3,34 @@ pragma solidity ^0.6.12;
 
 import "https://raw.githubusercontent.com/smartcontractkit/chainlink/master/evm-contracts/src/v0.6/VRFConsumerBase.sol";
 
-// We are using SafeMathChainlink.sol for safe math checks which is imported via VRFConsumerBase
+// For Safe Math checks we are using 'SafeMathChainlink.sol' which is imported via VRFConsumerBase
 
- /**
-  * Rinkeby Faucets
+ /*****************************************************************************************
+  * Contract used by a dice betting dapp. It allows users to place a bet on the predicted
+  * outcome of a dice roll. User can win up to 5x their bet amounts. The randomness comes
+  * from the Chainlink decentralized oracle.
   * --
   * After deploying this contract you need to fund it with ETH and LINK.
+  * Rinkeby Faucets
   * --
   * Testnet LINK is available from https://rinkeby.chain.link/
   * Testnet ETH  is available from https://faucet.rinkeby.io/
-  */
+  ******************************************************************************************/
 
 contract SmartGambling is VRFConsumerBase {
     
     address public owner;
+
+    // Random number will be betweeen 1 and MAX_CHOICEs
+    uint constant internal MAX_CHOICE = 6; 
+
+    // Chainlink Related
     bytes32 internal keyHash;
-    uint256 internal fee; // ChainLink Fee
+    uint256 internal fee; // Fee
     
     // MAKE THESE PRIVATE AFTER DEBUGGING COMPLETED
     bytes32 public lastRequestId;
     uint public lastResult;
-    
-    uint constant internal MAX_CHOICE = 6;
 
     struct Bet {
         address playerAddress;
@@ -187,7 +193,7 @@ contract SmartGambling is VRFConsumerBase {
         delete unclaimedWins[msg.sender];
     }
 
-    // Get Contract Balance in Wei minus the unclaimed wins and pending bets
+    // Get Contract Balance in Wei minus the 'unclaimed wins' and 'pending bets'
     function getRealEthBalance() public view returns(uint) {
         uint realBalance = address(this).balance.sub(unclaimedWinsTotal).sub(pendingBetsTotal);
         return realBalance;
