@@ -8,6 +8,18 @@
 
 You can play the app using this [link](https://fintechcamp.github.io/SmartGambling/). The contract has only been deployed on GitHub and on the [Rinkeby](https://www.rinkeby.io/) testnet.
 
+## Smart Contract programmed in Solidity  
+
+![Solidity](images/Solidity.png)  
+
+Smart Contract Code: [contracts/SmartGambling.sol](contracts/SmartGambling.sol)
+
+## Front programmed with HTML, CSS and JavaScript  
+
+We used [Web3.js - Ethereum JavaScript API](https://web3js.readthedocs.io/) to be able to interact with the Ethereum blockchain.  
+
+JavaScript Code: [js/main.js](js/main.js)  
+
 ## The randomness in the game is powered by the decentralized Oracle [ChainLink](https://chain.link/solutions/chainlink-vrf). 
 
 [![Logo](images/ChainLinkLogo.jpg)](https://chain.link/solutions/chainlink-vrf)  
@@ -15,7 +27,7 @@ You can play the app using this [link](https://fintechcamp.github.io/SmartGambli
 
 ## Metamask  
 
-We are using Metamask and [Web3.js - Ethereum JavaScript API](https://web3js.readthedocs.io/) to authenticate the user and connect to the Ethereum blockchain.  
+We are using Metamask to authenticate the user and connect to the Ethereum blockchain.  
 
 [![Logo](images/MetaMaskLogo.jpg)](https://metamask.io/)
 
@@ -36,5 +48,5 @@ Our develpoment was done using Truffle, Ganache, [Remix](https://remix.ethereum.
 - [Stephen Chen](https://github.com/schenht)
 - [Wazarat Hussain](https://github.com/wazarat)
 - [Val De Franco](https://github.com/DEFRANCOV)
-- [Ambreen Simon](https://github.com/ambreen2002) -->
+- [Ambreen Simon](https://github.com/ambreen2002)
 
