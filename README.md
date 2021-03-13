@@ -38,9 +38,10 @@ We are using Metamask to authenticate the user and connect to the Ethereum block
 
 ## Truffle, Ganache and Remix  
 
-Our develpoment was done using Truffle, Ganache, [Remix](https://remix.ethereum.org/)  
+Our develpoment was done using Truffle, Ganache and remix
 
-[![Logo](images/ganache.png)](https://www.trufflesuite.com/)  
+[![Logo](images/ganache.png)](https://www.trufflesuite.com/)
+[![Logo](images/Remix.jpg)](https://remix.ethereum.org/)  
 
 ## Demo  
 
