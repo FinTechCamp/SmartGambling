@@ -1,6 +1,8 @@
 ![HeaderLogo](images/Header.jpg)  
 
-# Smart Gambling: A simple Dapp that allows a user to bet on a random number and win/lose ETH.  
+# Smart Gambling: A simple Dapp that allows a user to bet on a random number and win/lose ETH. 
+
+# **[Play](https://fintechcamp.github.io/SmartGambling)**
 
 **Project #3**: This decentralized application (Dapp) allows a user to bet on a dice roll and win 5x his bet in ETH. The frontend is programmed using HTML, JavaScript as well as the [Web3.js - Ethereum JavaScript API](https://web3js.readthedocs.io/). The smart contract is programmed in [Solidity](https://docs.soliditylang.org/) and is designed to run on the [Ethereum](https://ethereum.org/en/) blochchain.  
 
