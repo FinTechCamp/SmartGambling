@@ -12,13 +12,13 @@ You can play the app using this [link](https://fintechcamp.github.io/SmartGambli
 
 ![Solidity](images/Solidity.png)  
 
-Smart Contract Code: [contracts/SmartGambling.sol](contracts/SmartGambling.sol)
+**Smart Contract Code:** [contracts/SmartGambling.sol](contracts/SmartGambling.sol)
 
 ## Front programmed with HTML, CSS and JavaScript  
 
 We used [Web3.js - Ethereum JavaScript API](https://web3js.readthedocs.io/) to be able to interact with the Ethereum blockchain.  
 
-JavaScript Code: [js/main.js](js/main.js)  
+**JavaScript Code:** [js/main.js](js/main.js)  
 
 ## The randomness in the game is powered by the decentralized Oracle [ChainLink](https://chain.link/solutions/chainlink-vrf). 
 
