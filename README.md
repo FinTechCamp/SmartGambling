@@ -34,7 +34,7 @@ Our develpoment was done using Truffle, Ganache, [Remix](https://remix.ethereum.
 
 - [Sebastien Vezina](https://github.com/SebCoding)
 - [Stephen Chen](https://github.com/schenht)
-- [Wazarat Hussein](https://github.com/wazarat)
+- [Wazarat Hussain](https://github.com/wazarat)
 - [Val De Franco](https://github.com/DEFRANCOV)
-- Ambreen Simon <!-- [Ambreen Simon](https://github.com/) -->
+- [Ambreen Simon](https://github.com/ambreen2002) -->
 
