@@ -1,35 +1,40 @@
+![HeaderLogo](images/Header.jpg)  
+
 # Smart Gambling: A simple Dapp that allows a user to bet on a random number and win/lose ETH.  
 
-Project #3: This decentralized application (Dapp) allows a user to bet on a random number and win/lose ETH. The frontend is programmed using HTML, JavaScript as well as the [Web3.js - Ethereum JavaScript API](https://web3js.readthedocs.io/). The smart contract is programmed in [Solidity](https://docs.soliditylang.org/) and is designed to run on the [Ethereum](https://ethereum.org/en/) blochchain. The randomness in the game is powered by the decentralized Oracle [ChainLink](https://chain.link/solutions/chainlink-vrf). 
+**Project #3**: This decentralized application (Dapp) allows a user to bet on a dice roll and win 5x his bet in ETH. The frontend is programmed using HTML, JavaScript as well as the [Web3.js - Ethereum JavaScript API](https://web3js.readthedocs.io/). The smart contract is programmed in [Solidity](https://docs.soliditylang.org/) and is designed to run on the [Ethereum](https://ethereum.org/en/) blochchain.  
 
+## Deployed on Rinkeby Testnet  
+
+You can play the app using this [link](https://fintechcamp.github.io/SmartGambling/). The contract has only been deployed on GitHub and on the [Rinkeby](https://www.rinkeby.io/) testnet.
+
+## The randomness in the game is powered by the decentralized Oracle [ChainLink](https://chain.link/solutions/chainlink-vrf). 
+
+[![Logo](images/ChainLinkLogo.jpg)](https://chain.link/solutions/chainlink-vrf)  
 [Chainlink VRF: On-chain Verifiable Randomness](https://blog.chain.link/verifiable-random-functions-vrf-random-number-generation-rng-feature/). 
 
-[![Logo](images/SmartGamblingGUI.jpg)](https://fintechcamp.github.io/SmartGambling/)
+## Metamask  
+
+We are using Metamask and [Web3.js - Ethereum JavaScript API](https://web3js.readthedocs.io/) to authenticate the user and connect to the Ethereum blockchain.  
+
+[![Logo](images/MetaMaskLogo.jpg)](https://metamask.io/)
+
+## Truffle, Ganache and Remix  
+
+Our develpoment was done using Truffle, Ganache, [Remix](https://remix.ethereum.org/)  
 
 [![Logo](images/ganache.png)](https://www.trufflesuite.com/)  
 
-[![Logo](images/ChainLinkLogo.jpg)](https://chain.link/solutions/chainlink-vrf)
-[![Logo](images/MetaMaskLogo.jpg)](https://metamask.io/)
-<br />
-<br />
-# Link to play with the Dapp on the [Rinkeby](https://www.rinkeby.io/) testnet.  
+## Demo  
 
-[Play the Smart Gambling Dapp](https://fintechcamp.github.io/SmartGambling/). The contract has only been deployed on the [Rinkeby](https://www.rinkeby.io/) testnet.
+[![Demo](images/Demo.gif)](https://fintechcamp.github.io/SmartGambling/)
 
-# Authors:  
-- Sebastien Vezina
-- Stephen Chen
-- Wazarat Hussain
-- Valentino De Franco
-- Ambreen Simon
 
-## A collapsible section with markdown
-<details>
-  <summary>Click to expand!</summary>
-  
-  ## Heading
-  1. A numbered
-  2. list
-     * With some
-     * Sub bullets
-</details>
+## TEAM MEMBERS:  
+
+- [Sebastien Vezina](https://github.com/SebCoding)
+- [Stephen Chen](https://github.com/schenht)
+- [Wazarat Hussein](https://github.com/wazarat)
+- [Val De Franco](https://github.com/DEFRANCOV)
+- Ambreen Simon <!-- [Ambreen Simon](https://github.com/) -->
+
