@@ -8,7 +8,10 @@
 
 ## Deployed on Rinkeby Testnet  
 
-You can play the app using this [link](https://fintechcamp.github.io/SmartGambling/). The contract has only been deployed on GitHub and on the [Rinkeby](https://www.rinkeby.io/) testnet.
+You can play the app using this [link](https://fintechcamp.github.io/SmartGambling/). The contract has only been deployed on GitHub and on the [Rinkeby](https://www.rinkeby.io/) testnet.  
+
+You will need ETH in your Metamask wallet prior to playing.  
+**Rinkeby Testnet ETH Faucet:** [faucet.rinkeby.io](https://faucet.rinkeby.io/)
 
 ## Smart Contract programmed in Solidity  
 
