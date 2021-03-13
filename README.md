@@ -1,6 +1,6 @@
 ![HeaderLogo](images/Header.jpg)  
 
-# Smart Gambling: A simple Dapp that allows a user to bet on a random number and win/lose ETH. 
+# Smart Gambling: A simple Dapp that allows a user to bet on the outcome of a dice roll get the chance to win ETH. 
 
 # **[Play](https://fintechcamp.github.io/SmartGambling)**
 
