@@ -21,7 +21,7 @@ contract SmartGambling is VRFConsumerBase {
     
     address public owner;
 
-    // Random number will be betweeen 1 and MAX_CHOICEs
+    // Random number will be betweeen 1 and MAX_CHOICE
     uint constant internal MAX_CHOICE = 6; 
 
     // Chainlink Related
