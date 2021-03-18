@@ -58,8 +58,9 @@ function refreshBalances(){
 function getWithdrawableWins() {
   contractInstance.methods.getUnclaimedWins().call()
   .then(result => {
-    document.getElementById("withdraw_amount_input").placeholder = result;
-    document.getElementById("UnclaimedWinsText").innerHTML = `Unclaimed Wins: ${web3.utils.fromWei(result, 'ether')} ETH`;
+    result = web3.utils.fromWei(result, 'ether');
+    document.getElementById("withdraw_amount_input").placeholder = `${result} ETH`;
+    document.getElementById("UnclaimedWinsText").innerHTML = `Unclaimed Wins: ${result} ETH`;
   });
 }
 
