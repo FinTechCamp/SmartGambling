@@ -107,7 +107,9 @@ async function withdrawWins() {
 }
 
 // Place the bet on the smart contract
-function placeBet(){ 
+async function placeBet(){ 
+
+  let contractAvailableBalance = await contractInstance.methods.getRealEthBalance().call();
 
   new Audio('sounds/click2.mp3').play();
   showResultDice(0);
@@ -127,6 +129,10 @@ function placeBet(){
   }
   else if(parseInt(betAmount) <= 0) {
     printMessage("Error: Amount must be a positive integer.");
+    return;
+  }
+  else if(contractAvailableBalance < betAmount*5) {
+    printMessage("Error: The contract does not have sufficient funds to accept your bet.");
     return;
   }
 
