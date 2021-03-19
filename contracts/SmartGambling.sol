@@ -57,7 +57,7 @@ contract SmartGambling is VRFConsumerBase {
         _;
     }
     
-    /* ***************** EVENTS ***************** */
+    // Events
     event BetPlacedEvent (
         address player_address,
         uint timestamp,
@@ -169,11 +169,6 @@ contract SmartGambling is VRFConsumerBase {
         // We do not want to keep a full history of all the bets ever made (save gas fees)
         delete bets[requestId];
     }
-    
-    // For Testing Purposes without ChainLInk
-    // function getRandomResult() private view returns(uint) {
-    //     return block.timestamp.mod(MAX_CHOICE) + 1;
-    // }  
 
     // Allows user to see unclaimed wins amount
     function getUnclaimedWins() public view returns(uint) {
@@ -226,4 +221,9 @@ contract SmartGambling is VRFConsumerBase {
     receive() external payable { 
         deposit();
     }
+
+    // For Testing Purposes without ChainLInk
+    // function getRandomResult() private view returns(uint) {
+    //     return block.timestamp.mod(MAX_CHOICE) + 1;
+    // }  
 }
