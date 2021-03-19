@@ -119,7 +119,8 @@ async function placeBet(){
     return;
   }
 
-  let playerPrediction = $('input[name=prediction]:checked').val();    
+  let playerPrediction = $('input[name=prediction]:checked').val(); 
+  let playerBalance = await web3.eth.getBalance(window.accountAddress);
 
   // Amount must be positive integer
   let betAmount = $("#bet_amount_input").val(); 
@@ -129,6 +130,10 @@ async function placeBet(){
   }
   else if(parseInt(betAmount) <= 0) {
     printMessage("Error: Amount must be a positive integer.");
+    return;
+  }
+  else if(playerBalance < betAmount) {
+    printMessage("Error: Bet is greater than the account balance.");
     return;
   }
   else if(contractAvailableBalance < betAmount*5) {
