@@ -2,13 +2,13 @@
 
 # Smart Gambling: A simple Dapp that allows a user to bet on the outcome of a dice roll and get the chance to win ETH. 
 
-# **[Play](https://fintechcamp.github.io/SmartGambling)**
+# **[Play](https://sebcoding.github.io/SmartGambling)**
 
 **Project #3**: This decentralized application (Dapp) allows a user to bet on a dice roll and win 5x his bet in ETH. The frontend is programmed using HTML, JavaScript as well as the [Web3.js - Ethereum JavaScript API](https://web3js.readthedocs.io/). The smart contract is programmed in [Solidity](https://docs.soliditylang.org/) and is designed to run on the [Ethereum](https://ethereum.org/en/) blochchain.  
 
 ## Deployed on Rinkeby Testnet  
 
-You can play the app using this [link](https://fintechcamp.github.io/SmartGambling/). The contract has only been deployed on GitHub and on the [Rinkeby](https://www.rinkeby.io/) testnet.  
+You can play the app using this [link](https://sebcoding.github.io/SmartGambling/). The contract has only been deployed on GitHub and on the [Rinkeby](https://www.rinkeby.io/) testnet.  
 
 You will need ETH in your Metamask wallet prior to playing.  
 **Rinkeby Testnet ETH Faucet:** [faucet.rinkeby.io](https://faucet.rinkeby.io/)
