@@ -48,11 +48,3 @@ Our develpoment was done using Truffle, Ganache and remix
 [![Demo](images/Demo.gif)](https://fintechcamp.github.io/SmartGambling/)
 
 
-## TEAM MEMBERS:  
-
-- [Sebastien Vezina](https://github.com/SebCoding)
-- [Stephen Chen](https://github.com/schenht)
-- [Wazarat Hussain](https://github.com/wazarat)
-- [Val De Franco](https://github.com/DEFRANCOV)
-- [Ambreen Simon](https://github.com/ambreen2002)
-
